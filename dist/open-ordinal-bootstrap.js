@@ -40,10 +40,10 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  Mode: () => (/* reexport */ Mode),
-  OpenOrdinalModules: () => (/* reexport */ OpenOrdinalModules),
-  Options: () => (/* reexport */ Options),
-  Resource: () => (/* reexport */ Resource),
+  BootstrapMode: () => (/* reexport */ BootstrapMode),
+  BootstrapOpenOrdinalModules: () => (/* reexport */ BootstrapOpenOrdinalModules),
+  BootstrapOptions: () => (/* reexport */ BootstrapOptions),
+  BootstrapResource: () => (/* reexport */ BootstrapResource),
   bootstrap: () => (/* reexport */ bootstrap)
 });
 
@@ -51,10 +51,10 @@ __webpack_require__.d(__webpack_exports__, {
 var OOBS_Core_namespaceObject = {};
 __webpack_require__.r(OOBS_Core_namespaceObject);
 __webpack_require__.d(OOBS_Core_namespaceObject, {
-  Mode: () => (Mode),
-  OpenOrdinalModules: () => (OpenOrdinalModules),
-  Options: () => (Options),
-  Resource: () => (Resource),
+  BootstrapMode: () => (BootstrapMode),
+  BootstrapOpenOrdinalModules: () => (BootstrapOpenOrdinalModules),
+  BootstrapOptions: () => (BootstrapOptions),
+  BootstrapResource: () => (BootstrapResource),
   bootstrap: () => (bootstrap)
 });
 
@@ -62,38 +62,38 @@ __webpack_require__.d(OOBS_Core_namespaceObject, {
 /**
  * Bootstap Mode
  */
-var Mode;
-(function (Mode) {
+var BootstrapMode;
+(function (BootstrapMode) {
     /**
      * Load Inscription Metadata and Boot using supplied Options (Default)
      */
-    Mode[Mode["LoadByMetadataOptionsAndBoot"] = 0] = "LoadByMetadataOptionsAndBoot";
+    BootstrapMode[BootstrapMode["LoadByMetadataOptionsAndBoot"] = 0] = "LoadByMetadataOptionsAndBoot";
     /**
      * Load Inscription Directly by Id and Boot
      */
-    Mode[Mode["LoadByInscriptionIdAndBoot"] = 1] = "LoadByInscriptionIdAndBoot";
+    BootstrapMode[BootstrapMode["LoadByInscriptionIdAndBoot"] = 1] = "LoadByInscriptionIdAndBoot";
     /**
      * Load Inscription via Id and then via it's SAT and fetch Latest and Boot
      */
-    Mode[Mode["LoadLatestByInscriptionIdAndBoot"] = 2] = "LoadLatestByInscriptionIdAndBoot";
+    BootstrapMode[BootstrapMode["LoadLatestByInscriptionIdAndBoot"] = 2] = "LoadLatestByInscriptionIdAndBoot";
     /**
      * Load specified index via SAT and Boot
      */
-    Mode[Mode["LoadIndexBySatAndBoot"] = 3] = "LoadIndexBySatAndBoot";
+    BootstrapMode[BootstrapMode["LoadIndexBySatAndBoot"] = 3] = "LoadIndexBySatAndBoot";
     /**
      * Load Latest Inscription via SAT and Boot
      */
-    Mode[Mode["LoadLatestBySatAndBoot"] = 4] = "LoadLatestBySatAndBoot";
-})(Mode || (Mode = {}));
+    BootstrapMode[BootstrapMode["LoadLatestBySatAndBoot"] = 4] = "LoadLatestBySatAndBoot";
+})(BootstrapMode || (BootstrapMode = {}));
 /**
  * Options class
  */
-class Options {
-    constructor(options = { mode: Mode.LoadByMetadataOptionsAndBoot }) {
+class BootstrapOptions {
+    constructor(options = { mode: BootstrapMode.LoadByMetadataOptionsAndBoot }) {
         /**
          * The mode for bootstrapping
          */
-        this.mode = Mode.LoadByMetadataOptionsAndBoot;
+        this.mode = BootstrapMode.LoadByMetadataOptionsAndBoot;
         /**
          * Optional: Index on sat to bootstrap
          */
@@ -110,7 +110,7 @@ class Options {
 /**
  * Resource class
  */
-class Resource {
+class BootstrapResource {
     constructor(options) {
         /**
          * Optional: Index on sat to bootstrap
@@ -124,7 +124,7 @@ class Resource {
 /**
  * Open Ordinal Modules Options class
  */
-class OpenOrdinalModules {
+class BootstrapOpenOrdinalModules {
     constructor(options = {}) {
         this.api = options.api = false;
     }
@@ -2795,7 +2795,7 @@ async function bootstrap(options) {
     if (_recursiveAvailable) {
         let resources;
         switch (options.mode) {
-            case Mode.LoadByMetadataOptionsAndBoot: // 0
+            case BootstrapMode.LoadByMetadataOptionsAndBoot: // 0
                 // Load Inscription Metadata and Boot (Default)
                 // Required: Options in Metadata (Bootstrap protocol)
                 if (options.res) {
@@ -2809,7 +2809,7 @@ async function bootstrap(options) {
                     err("'Metadata' for inscription do not contain the 'bootstrap' protocol.");
                 }
                 break;
-            case Mode.LoadByInscriptionIdAndBoot: // 1
+            case BootstrapMode.LoadByInscriptionIdAndBoot: // 1
                 // Load Inscription Directly by Id and Boot
                 // Required: id
                 if (options.res) {
@@ -2834,7 +2834,7 @@ async function bootstrap(options) {
                     err("Missing SAT and / or Index for 'LoadByInscriptionIdAndBoot'.");
                 }
                 break;
-            case Mode.LoadLatestByInscriptionIdAndBoot: // 2
+            case BootstrapMode.LoadLatestByInscriptionIdAndBoot: // 2
                 // Load Inscription via Id and then via it's SAT and fetch Latest and Boot
                 // Required: id
                 if (options.res) {
@@ -2862,7 +2862,7 @@ async function bootstrap(options) {
                     err("Missing SAT and / or Index for 'LoadByInscriptionIdAndBoot'.");
                 }
                 break;
-            case Mode.LoadIndexBySatAndBoot: // 3
+            case BootstrapMode.LoadIndexBySatAndBoot: // 3
                 // Load specified index via SAT and Boot
                 // Required: sat
                 if (options.res) {
@@ -2889,7 +2889,7 @@ async function bootstrap(options) {
                     err("Missing SAT and / or Index for 'LoadIndexBySatAndBoot'.");
                 }
                 break;
-            case Mode.LoadLatestBySatAndBoot: // 4
+            case BootstrapMode.LoadLatestBySatAndBoot: // 4
                 // Load Latest Inscription via SAT and Boot
                 // Required: sat
                 if (options.res) {
@@ -3185,9 +3185,9 @@ _baseUrl = getBaseUrl();
  */
 window.ooBS = OOBS_Core_namespaceObject;
 //# sourceMappingURL=OOBS.js.map
-var __webpack_exports__Mode = __webpack_exports__.Mode;
-var __webpack_exports__OpenOrdinalModules = __webpack_exports__.OpenOrdinalModules;
-var __webpack_exports__Options = __webpack_exports__.Options;
-var __webpack_exports__Resource = __webpack_exports__.Resource;
+var __webpack_exports__BootstrapMode = __webpack_exports__.BootstrapMode;
+var __webpack_exports__BootstrapOpenOrdinalModules = __webpack_exports__.BootstrapOpenOrdinalModules;
+var __webpack_exports__BootstrapOptions = __webpack_exports__.BootstrapOptions;
+var __webpack_exports__BootstrapResource = __webpack_exports__.BootstrapResource;
 var __webpack_exports__bootstrap = __webpack_exports__.bootstrap;
-export { __webpack_exports__Mode as Mode, __webpack_exports__OpenOrdinalModules as OpenOrdinalModules, __webpack_exports__Options as Options, __webpack_exports__Resource as Resource, __webpack_exports__bootstrap as bootstrap };
+export { __webpack_exports__BootstrapMode as BootstrapMode, __webpack_exports__BootstrapOpenOrdinalModules as BootstrapOpenOrdinalModules, __webpack_exports__BootstrapOptions as BootstrapOptions, __webpack_exports__BootstrapResource as BootstrapResource, __webpack_exports__bootstrap as bootstrap };
