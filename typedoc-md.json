@@ -1,0 +1,41 @@
+{
+    "$schema": "https://typedoc-plugin-markdown.org/schema.json",
+    "sort": [
+        "source-order"
+    ],
+    "membersWithOwnFile": [
+        "Enum",
+        "Variable",
+        "Function",
+        "Class",
+        "Interface",
+        "TypeAlias"
+    ],
+    "excludeExternals": false,
+    "entryPoints": [
+        "src/OOBS.Core.ts",
+    ],
+    "entryPointStrategy": "resolve",
+    "alwaysCreateEntryPointModule": true,
+    "outputFileStrategy": "members",
+    "hidePageHeader": true,
+    "hideGroupHeadings": true,
+    "textContentMappings": {
+        "breadcrumbs.home": "Open Ordial Bootstrap"
+    },
+    "readme": "src/docs/Introduction.md",
+    "projectDocuments": [
+        "src/docs/Introduction.md",
+        "src/docs/Modes.md",
+        "src/docs/Extensions.md",
+        "src/docs/FAQ.md",
+        "ChangeLog.md",
+    ],
+    "out": "docs/markdown",
+    "name": "Bootstrap",
+    "mergeReadme": true,
+    "plugin": [
+        "typedoc-plugin-markdown",
+        "typedoc-plugin-mermaid"
+    ]
+}
