@@ -10,7 +10,7 @@
 
 //#region Imports And Exports
 
-import { IOptions, Options, IResource, Resource, Mode } from './models/Options.js'
+import { IBootstrapOptions, BootstrapOptions, IBootstrapResource, BootstrapResource, BootstrapMode } from './models/Options.js'
 export * from './models/Options.js'
 
 //OOMD Inports
@@ -47,7 +47,7 @@ declare global {
  * @param {IOptions} options Options for bootstrap
  * @returns {Promise<void>} A promise when bootstrapping is done
  */
-export async function bootstrap(options: IOptions): Promise<void> {
+export async function bootstrap(options: IBootstrapOptions): Promise<void> {
     if (!options) {
         options = { mode: 0 };
     }
@@ -58,7 +58,7 @@ export async function bootstrap(options: IOptions): Promise<void> {
     if (_recursiveAvailable) {
         let resources: { [key: string]: string } | undefined;
         switch (options.mode) {
-            case Mode.LoadByMetadataOptionsAndBoot: // 0
+            case BootstrapMode.LoadByMetadataOptionsAndBoot: // 0
                 // Load Inscription Metadata and Boot (Default)
                 // Required: Options in Metadata (Bootstrap protocol)
                 if (options.res) {
@@ -72,7 +72,7 @@ export async function bootstrap(options: IOptions): Promise<void> {
                     err("'Metadata' for inscription do not contain the 'bootstrap' protocol.");
                 }
                 break;
-            case Mode.LoadByInscriptionIdAndBoot: // 1
+            case BootstrapMode.LoadByInscriptionIdAndBoot: // 1
                 // Load Inscription Directly by Id and Boot
                 // Required: id
                 if (options.res) {
@@ -95,7 +95,7 @@ export async function bootstrap(options: IOptions): Promise<void> {
                     err("Missing SAT and / or Index for 'LoadByInscriptionIdAndBoot'.");
                 }
                 break;
-            case Mode.LoadLatestByInscriptionIdAndBoot: // 2
+            case BootstrapMode.LoadLatestByInscriptionIdAndBoot: // 2
                 // Load Inscription via Id and then via it's SAT and fetch Latest and Boot
                 // Required: id
                 if (options.res) {
@@ -121,7 +121,7 @@ export async function bootstrap(options: IOptions): Promise<void> {
                     err("Missing SAT and / or Index for 'LoadByInscriptionIdAndBoot'.");
                 }
                 break;
-            case Mode.LoadIndexBySatAndBoot: // 3
+            case BootstrapMode.LoadIndexBySatAndBoot: // 3
                 // Load specified index via SAT and Boot
                 // Required: sat
                 if (options.res) {
@@ -146,7 +146,7 @@ export async function bootstrap(options: IOptions): Promise<void> {
                     err("Missing SAT and / or Index for 'LoadIndexBySatAndBoot'.");
                 }
                 break;
-            case Mode.LoadLatestBySatAndBoot: // 4
+            case BootstrapMode.LoadLatestBySatAndBoot: // 4
                 // Load Latest Inscription via SAT and Boot
                 // Required: sat
                 if (options.res) {
@@ -347,11 +347,11 @@ async function getLatestPath(path: string): Promise<string> {
 
 //#region General Helpers
 
-async function loadInscriptionResources(res: { [_: string]: IResource }): Promise<{ [_: string]: string } | undefined> {
+async function loadInscriptionResources(res: { [_: string]: IBootstrapResource }): Promise<{ [_: string]: string } | undefined> {
     let resources: { [_: string]: string } | undefined;
     try {
         for (/* webpackIgnore: true */const [key, value] of Object.entries(res)) {
-            var typedValue = value as IResource;
+            var typedValue = value as IBootstrapResource;
             // Load resources that is referenced by id
             if (typedValue.id) {
                 let url = await getInscriptionContentUrl(typedValue.id);

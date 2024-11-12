@@ -14,7 +14,7 @@ There's two ways of loading additional resources (inscriptions) before `bootstra
 
 ### Using res property in Options
 
-If the `res` property of {@link OOBS.Options Options} are specified the bootrapper will load these. All kinds of inscriptions can be loaded with this option.
+If the `res` property of {@link OOBS.BootstrapOptions BootstrapOptions} are specified the bootrapper will load these. All kinds of inscriptions can be loaded with this option.
 
 The inscriptions will be loaded after bootstrap is started and before `bootstrap()` is called in the loaded module.
 

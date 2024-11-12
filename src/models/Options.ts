@@ -1,7 +1,7 @@
 /**
  * Bootstap Mode
  */
-export enum Mode {
+export enum BootstrapMode {
     /**
      * Load Inscription Metadata and Boot using supplied Options (Default)
      */
@@ -24,50 +24,50 @@ export enum Mode {
     LoadLatestBySatAndBoot = 4,
 }
 
-/** {@inheritDoc Options} */
-export interface IOptions {
-    /** {@inheritDoc Options.mode} */
-    mode: Mode;
-    /** {@inheritDoc Options.id} */
+/** {@inheritDoc BootstrapOptions} */
+export interface IBootstrapOptions {
+    /** {@inheritDoc BootstrapOptions.mode} */
+    mode: BootstrapMode;
+    /** {@inheritDoc BootstrapOptions.id} */
     id?: number;
-    /** {@inheritDoc Options.sat} */
+    /** {@inheritDoc BootstrapOptions.sat} */
     sat?: number;
-    /** {@inheritDoc Options.index} */
+    /** {@inheritDoc BootstrapOptions.index} */
     index?: number;
-    /** {@inheritDoc Options.data} */
+    /** {@inheritDoc BootstrapOptions.data} */
     data?: any;
-    /** {@inheritDoc Options.res} */
-    res?: { [_: string]: IResource };
-    /** {@inheritDoc Options.oo} */
-    oo?: IOpenOrdinalModules;
-    /** {@inheritDoc Options.dev} */
+    /** {@inheritDoc BootstrapOptions.res} */
+    res?: { [_: string]: IBootstrapResource };
+    /** {@inheritDoc BootstrapOptions.oo} */
+    oo?: IBootstrapOpenOrdinalModules;
+    /** {@inheritDoc BootstrapOptions.dev} */
     dev?: string;
 }
 
-/** {@inheritDoc Resource} */
-export interface IResource {
-    /** {@inheritDoc Resource.id} */
+/** {@inheritDoc BootstrapResource} */
+export interface IBootstrapResource {
+    /** {@inheritDoc BootstrapResource.id} */
     id?: string;
-    /** {@inheritDoc Resource.sat} */
+    /** {@inheritDoc BootstrapResource.sat} */
     sat?: number;
-    /** {@inheritDoc Resource.index} */
+    /** {@inheritDoc BootstrapResource.index} */
     index?: number;
 }
 
-/** {@inheritDoc OpenOrdinalModules} */
-export interface IOpenOrdinalModules {
-    /** {@inheritDoc OpenOrdinalModules.api} */
+/** {@inheritDoc BootstrapOpenOrdinalModules} */
+export interface IBootstrapOpenOrdinalModules {
+    /** {@inheritDoc BootstrapOpenOrdinalModules.api} */
     api?: boolean;
 }
 
 /**
  * Options class
  */
-export class Options {
+export class BootstrapOptions {
     /**
      * The mode for bootstrapping
      */
-    mode: Mode = Mode.LoadByMetadataOptionsAndBoot;
+    mode: BootstrapMode = BootstrapMode.LoadByMetadataOptionsAndBoot;
     /**
      * Optional: The inscription Id to bootstrap
      */
@@ -87,18 +87,18 @@ export class Options {
     /**
      * Optional: Additional inscriptions to load and pass into `bootstrap()`
      */
-    res?: { [_: string]: Resource } | undefined;
+    res?: { [_: string]: BootstrapResource } | undefined;
     /**
      * Optional: Additional Open Ordinal modules to load
      */
-    oo?: OpenOrdinalModules | undefined;
+    oo?: BootstrapOpenOrdinalModules | undefined;
     /**
      * Optional: Relative path to module to boot. This is used during development
      * and should never be present in actual inscribed ordinal.
      */
     dev?: string | undefined;
 
-    constructor(options: IOptions = { mode: Mode.LoadByMetadataOptionsAndBoot }) {
+    constructor(options: IBootstrapOptions = { mode: BootstrapMode.LoadByMetadataOptionsAndBoot }) {
         this.mode = options.mode;
         this.id = options.id;
         this.sat = options.sat;
@@ -112,7 +112,7 @@ export class Options {
 /**
  * Resource class
  */
-export class Resource {
+export class BootstrapResource {
     /**
      * Optional: The inscription Id to include
      */
@@ -126,7 +126,7 @@ export class Resource {
      */
     index?: number | undefined = -1;
 
-    constructor(options: IResource) {
+    constructor(options: IBootstrapResource) {
         this.id = options.id;
         this.sat = options.sat;
         this.index = options.index ?? -1;
@@ -136,13 +136,13 @@ export class Resource {
 /**
  * Open Ordinal Modules Options class
  */
-export class OpenOrdinalModules {
+export class BootstrapOpenOrdinalModules {
     /**
      * Option to load Open Ordinal API
      */
     api?: boolean | undefined;
 
-    constructor(options: IOpenOrdinalModules = {}) {
+    constructor(options: IBootstrapOpenOrdinalModules = {}) {
         this.api = options.api = false;
     }
 }
