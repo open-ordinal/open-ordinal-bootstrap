@@ -5,6 +5,7 @@ bun.lockb
 yarn.lock
 package-lock.json
 tsconfig.tsbuildinfo
+.npmrc
 
 .DS_Store
 
