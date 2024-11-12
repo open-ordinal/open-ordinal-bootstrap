@@ -1,0 +1,13 @@
+node_modules/
+.node_modules/
+
+bun.lockb
+yarn.lock
+package-lock.json
+tsconfig.tsbuildinfo
+
+.DS_Store
+
+lib
+temp
+output
