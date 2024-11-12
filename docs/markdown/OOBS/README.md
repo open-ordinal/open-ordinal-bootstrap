@@ -6,19 +6,19 @@
 
 ### Enumerations
 
-- [Mode](enumerations/Mode.md)
+- [BootstrapMode](enumerations/BootstrapMode.md)
 
 ### Classes
 
-- [Options](classes/Options.md)
-- [Resource](classes/Resource.md)
-- [OpenOrdinalModules](classes/OpenOrdinalModules.md)
+- [BootstrapOptions](classes/BootstrapOptions.md)
+- [BootstrapResource](classes/BootstrapResource.md)
+- [BootstrapOpenOrdinalModules](classes/BootstrapOpenOrdinalModules.md)
 
 ### Interfaces
 
-- [IOptions](interfaces/IOptions.md)
-- [IResource](interfaces/IResource.md)
-- [IOpenOrdinalModules](interfaces/IOpenOrdinalModules.md)
+- [IBootstrapOptions](interfaces/IBootstrapOptions.md)
+- [IBootstrapResource](interfaces/IBootstrapResource.md)
+- [IBootstrapOpenOrdinalModules](interfaces/IBootstrapOpenOrdinalModules.md)
 
 ### Functions
 
