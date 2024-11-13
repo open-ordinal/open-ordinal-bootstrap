@@ -2781,7 +2781,7 @@ let _recursiveAvailable = true;
 /**
  * Initialize the bootstrapper
  *
- * @param {IOptions} options Options for bootstrap
+ * @param {IBootstrapOptions} options Options for bootstrap
  * @returns {Promise<void>} A promise when bootstrapping is done
  */
 async function bootstrap(options) {
@@ -2820,7 +2820,11 @@ async function bootstrap(options) {
                         let dynamicModuleUrl = await getInscriptionContentUrl(options.id.toString());
                         const dynamicModule = await import(/* webpackIgnore: true */ `${dynamicModuleUrl}`);
                         if (typeof dynamicModule.bootstrap === "function") {
-                            dynamicModule.bootstrap(options, options.data, resources);
+                            let ooModules = {};
+                            if (options.oo) {
+                                ooModules = await loadOpenOrdinalModules(options);
+                            }
+                            dynamicModule.bootstrap(options, options.data, resources, ooModules);
                         }
                         else {
                             err("'bootstrap()' is not exported in imported module.");
@@ -2848,7 +2852,11 @@ async function bootstrap(options) {
                         let dynamicModuleUrl = await getInscriptionContentUrl(latestInscriptionId);
                         const dynamicModule = await import(/* webpackIgnore: true */ `${dynamicModuleUrl}`);
                         if (typeof dynamicModule.bootstrap === "function") {
-                            dynamicModule.bootstrap(options, options.data, resources);
+                            let ooModules = {};
+                            if (options.oo) {
+                                ooModules = await loadOpenOrdinalModules(options);
+                            }
+                            dynamicModule.bootstrap(options, options.data, resources, ooModules);
                         }
                         else {
                             err("'bootstrap()' is not exported in imported module.");
@@ -2875,7 +2883,11 @@ async function bootstrap(options) {
                         let dynamicModuleUrl = await getInscriptionContentUrl(latestInscriptionId);
                         const dynamicModule = await import(/* webpackIgnore: true */ `${dynamicModuleUrl}`);
                         if (typeof dynamicModule.bootstrap === "function") {
-                            dynamicModule.bootstrap(options, options.data, resources);
+                            let ooModules = {};
+                            if (options.oo) {
+                                ooModules = await loadOpenOrdinalModules(options);
+                            }
+                            dynamicModule.bootstrap(options, options.data, resources, ooModules);
                         }
                         else {
                             err("'bootstrap()' is not exported in imported module.");
@@ -2902,7 +2914,11 @@ async function bootstrap(options) {
                         let dynamicModuleUrl = await getInscriptionContentUrl(latestInscriptionId);
                         const dynamicModule = await import(/* webpackIgnore: true */ `${dynamicModuleUrl}`);
                         if (typeof dynamicModule.bootstrap === "function") {
-                            dynamicModule.bootstrap(options, options.data, resources);
+                            let ooModules = {};
+                            if (options.oo) {
+                                ooModules = await loadOpenOrdinalModules(options);
+                            }
+                            dynamicModule.bootstrap(options, options.data, resources, ooModules);
                         }
                         else {
                             err("'bootstrap()' is not exported in imported module.");
@@ -2927,7 +2943,11 @@ async function bootstrap(options) {
             }
             const dynamicModule = await import(/* webpackIgnore: true */ `${options.dev}`);
             if (typeof dynamicModule.bootstrap === "function") {
-                dynamicModule.bootstrap(options, options.data, resources);
+                let ooModules = {};
+                if (options.oo) {
+                    ooModules = await loadOpenOrdinalModules(options);
+                }
+                dynamicModule.bootstrap(options, options.data, resources, ooModules);
             }
             else {
                 err("bootstrap() is not exported in imported module.");
@@ -3082,12 +3102,19 @@ async function getLatestPath(path) {
 }
 //#endregion
 //#region General Helpers
+/**
+ * Loads inscription resources based on the provided options.
+ *
+ * @param {[_: string]: IBootstrapResource} res - An object containing the resources to be loaded.
+ * @returns {Promise<{ [_: string]: string } | undefined>} A promise that resolves to an object containing the loaded resources as data URLs, or undefined if no resources are loaded.
+ */
 async function loadInscriptionResources(res) {
     let resources;
     try {
+        // Iterate over each resource entry
         for ( /* webpackIgnore: true */const [key, value] of Object.entries(res)) {
             var typedValue = value;
-            // Load resources that is referenced by id
+            // Load resources that are referenced by id
             if (typedValue.id) {
                 let url = await getInscriptionContentUrl(typedValue.id);
                 let data = await fetchAndConvertToDataURL(url);
@@ -3097,7 +3124,7 @@ async function loadInscriptionResources(res) {
                     resources[key] = data.toString();
                 }
             }
-            // Load resources that is referenced by sat
+            // Load resources that are referenced by sat
             if (typedValue.sat) {
                 let satData = await getSatAt(typedValue.sat, typedValue.index);
                 let inscriptionId = satData.id;
@@ -3117,6 +3144,28 @@ async function loadInscriptionResources(res) {
     return resources;
 }
 /**
+ * Loads Open Ordinal modules based on the provided options.
+ *
+ * @group Main
+ * @param {BootstrapOptions} options - The options for loading the modules.
+ * @returns {Promise<any>} A promise that resolves to an object containing the loaded modules.
+ */
+async function loadOpenOrdinalModules(options) {
+    let ooModules = {};
+    // Check if the Open Ordinal API should be loaded
+    if (options.oo?.api === true) {
+        let satData = await getSatAt(156280470160431, -1);
+        if (satData.id) {
+            let dynamicAPIModuleUrl = await getInscriptionContentUrl(satData.id);
+            // Import the dynamic API module
+            let ooAPI = await import(/* webpackIgnore: true */ `${dynamicAPIModuleUrl}`);
+            ooModules.ooAPI = ooAPI;
+            window.ooAPI = ooAPI;
+        }
+    }
+    return ooModules;
+}
+/**
  * Extracts the inscription ID from the current URL.
  *
  * @returns {string} - The inscription ID extracted from the URL, or an empty string if the URL is invalid.
@@ -3131,8 +3180,15 @@ function getInscriptionIdFromUrl() {
         return "";
     }
 }
+/**
+ * Retrieves the base URL from the current window location.
+ *
+ * @group Main
+ * @returns {string} The base URL.
+ */
 function getBaseUrl() {
     const parts = window.location.pathname.split("/");
+    // Define the keywords to look for in the pathname
     const lookFor = ['content', 'preview', 'inscription', 'r'];
     let urlOut = [];
     if (parts.some(item => lookFor.includes(item))) {
@@ -3147,11 +3203,24 @@ function getBaseUrl() {
         return window.location.origin;
     }
 }
+/**
+ * Prepares a URL by appending the base URL if the provided URL is relative.
+ *
+ * @param {string} url - The URL to be prepared.
+ * @param {string} baseUrl - The base URL to be appended if the URL is relative.
+ * @returns {string} The prepared URL.
+ */
 function prepareUrl(url, baseUrl) {
     if (url.includes("http"))
         return url;
     return `${baseUrl}${url}`;
 }
+/**
+ * Fetches a resource from the given URL and converts it to a Data URL.
+ *
+ * @param {string} url - The URL of the resource to fetch.
+ * @returns {Promise<string | ArrayBuffer | undefined | null>} A promise that resolves to a Data URL string, an ArrayBuffer, or null if an error occurs.
+ */
 async function fetchAndConvertToDataURL(url) {
     const response = await fetch(url);
     const blob = await response.blob();
@@ -3181,7 +3250,7 @@ _baseUrl = getBaseUrl();
 
 
 /**
- * Assign OOAPI to window
+ * Assign OOBS to window
  */
 window.ooBS = OOBS_Core_namespaceObject;
 //# sourceMappingURL=OOBS.js.map
