@@ -29,6 +29,7 @@
         "src/docs/Modes.md",
         "src/docs/Extensions.md",
         "src/docs/FAQ.md",
+        "src/docs/Inscriptions.md",
         "ChangeLog.md",
     ],
     "out": "docs/markdown",
