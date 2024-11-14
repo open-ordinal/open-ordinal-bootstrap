@@ -20,4 +20,4 @@ A promise when bootstrapping is done
 
 ## Defined in
 
-[OOBS.Core.ts:51](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/8b6e3eb87be9e88339623c1725de53a3825c8878/src/OOBS.Core.ts#L51)
+[OOBS.Core.ts:51](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/016feec9b8b1e9113d46e85545127ab92a2172b6/src/OOBS.Core.ts#L51)
