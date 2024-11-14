@@ -8,9 +8,9 @@ children:
  
 # Introduction
 
-The Open Ordinal Bootstrap addresses the challenge of immutability in inscriptions (ordinals). Since inscriptions are inherently immutable, it becomes difficult to create dynamic ordinals using ES-Modules or JavaScript. The bootstrap code provides a solution by introducing a setup process that includes an `Options` object (in `Metadata` or inline) with parameters like `mode`, `id`, `sat`, and `data`. This setup allows the ordinal to be “booted” in different ways, making it more flexible and dynamic.
+The Open Ordinal Bootstrap addresses the challenge of immutability in inscriptions (ordinals). Since inscriptions are inherently immutable, it becomes difficult to create updatable dynamic ordinals using ES-Modules or JavaScript. The bootstrap code provides a solution by introducing a setup process that includes an `Options` object (inline or in `Metadata`) with parameters like `mode`, `id`, `sat`, `data`, `res` and `oo`. This setup allows the ordinal to be “booted” in different ways, making it more flexible and dynamic.
 
-Additionally, the bootstrap code ensures that the inscription size remains small, optimizing the footprint of the ordinal (root inscription). Various modes are available for bootstrapping, such as loading by inscription ID, loading the latest by inscription ID, loading by sat, and more. These modes enable different ways to dynamically load and render the ordinal with the necessary ES-Modules or JavaScript.
+Additionally, the bootstrap code ensures that the inscription size remains small, optimizing the footprint of the ordinal (root inscription). Various modes are available for bootstrapping, such as loading by inscription ID, loading the latest by inscription ID, loading by sat, and more. These modes enable different ways to dynamically load and boot the ordinal with the necessary ES-Modules or JavaScript.
 
 The Open Ordinal Bottstrap is an on-chain resource, inscribed on sat [1690364215876362](https://ordinals.com/sat/1690364215876362).
 
@@ -40,7 +40,7 @@ Example Inscription
 </html>
 ```
 
-An inscribed module for your ordinal that contain all your logic to boot your ordinal.
+An inscribed module for your ordinal that contain all your logic to boot your ordinal. The code need to export a function with the signature `bootstrap(options, data, resources, ooModules)`.
 
 Example Module on Sat
 ```js
@@ -59,4 +59,4 @@ module.exports = {
 };
 ```
 
-Since your module is inscribed on a `sat` and the bootstrapper load the latest version that is available. You are now able to update the code for the ordinal.
+Since your module is inscribed on a `sat` and the bootstrapper load the latest version that is available. You are now able to update the code for the ordinal by re-inscribing on the same `sat` for the module.
