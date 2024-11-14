@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    overflow: hidden;
+    background-color: black;
+    color: #fff;
+}
+
+.full {
+    width: 100%;
+    height: 100%;
+}
+
+.message {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    padding: 5px;
+    z-index: 10;
+    filter: drop-shadow(black 0.2rem 0.2rem 3px);
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Open Ordinal Bootstrap Test</title>
+        <link rel="stylesheet" href="./index.css">
+    </head>
+
+    <body>
+
+        <div class="full">
+            <div class="message" id="message"></div>
+        </div>
+        <script type="module">
+
+            import * as ooBS from './open-ordinal-bootstrap.min.js';
+
+            await ooBS.bootstrap({
+                mode: 4, //LoadLatestBySatAndBoot
+                sat: 1234567890,
+                data: { "message": "Hello world" },
+                dev: "./index.js"
+            });
+
+        </script>
+
+    </body>
+
+</html>
