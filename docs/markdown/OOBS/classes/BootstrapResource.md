@@ -20,7 +20,7 @@ Resource class
 
 #### Defined in
 
-[models/Options.ts:129](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/d3621aa1474c237b39fe1304beee1193159db00e/src/models/Options.ts#L129)
+[models/Options.ts:129](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4c10c1c7d08e64d9389b8371356c764525d9fbc7/src/models/Options.ts#L129)
 
 ## Properties
 
@@ -32,7 +32,7 @@ Optional: The inscription Id to include
 
 #### Defined in
 
-[models/Options.ts:119](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/d3621aa1474c237b39fe1304beee1193159db00e/src/models/Options.ts#L119)
+[models/Options.ts:119](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4c10c1c7d08e64d9389b8371356c764525d9fbc7/src/models/Options.ts#L119)
 
 ***
 
@@ -44,7 +44,7 @@ Optional: The sat Id to include
 
 #### Defined in
 
-[models/Options.ts:123](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/d3621aa1474c237b39fe1304beee1193159db00e/src/models/Options.ts#L123)
+[models/Options.ts:123](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4c10c1c7d08e64d9389b8371356c764525d9fbc7/src/models/Options.ts#L123)
 
 ***
 
@@ -56,4 +56,4 @@ Optional: Index on sat to bootstrap
 
 #### Defined in
 
-[models/Options.ts:127](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/d3621aa1474c237b39fe1304beee1193159db00e/src/models/Options.ts#L127)
+[models/Options.ts:127](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4c10c1c7d08e64d9389b8371356c764525d9fbc7/src/models/Options.ts#L127)
