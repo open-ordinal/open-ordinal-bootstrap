@@ -39,13 +39,47 @@ Example of Inscription
 
 Example of Ordinal code
 ```js
-export async function bootstrap(options, data, resources) {
+export async function bootstrap(options, data, resources, ooModules) {
     // Based on the code above resources will contain:
     // {
     //    image: "data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAA..."
     //    model: "data:model/gltf-binary;base64,Z2xURgIAAADIIQEAeBQ..."
     //    javascriptA: "data:text/javascript;base64,ZXhwb3J0IGFzeW5jIGZ1bm..."
     //    javascriptB: "data:text/javascript;base64,ZXhwb3J0IGFzeW5jIGZ1bm..."
+    // }
+}
+```
+
+## Automatic loading of Open Ordinal modules
+
+If you need other Open Ordinal modules available you can optionally use the bootstrap to load these during bootstrap.
+
+### Using oo property in Options
+
+If the `oo` property of [BootstrapOptions](../OOBS/classes/BootstrapOptions.md) are specified the bootrapper will load these. The module-loader will allways load the latest version of these modules. When more Open Ordinal modules are available later this will be extended.
+
+Example of Inscription
+```html
+<script type="module">
+    import * as ooBS from '/content/<BootstrapInscriptionId>';
+
+    await ooBS.bootstrap({
+        ...
+        oo: {
+            // Load Open Ordinal API module
+            api: true
+        }
+        ...
+    });
+</script>
+```
+
+Example of Ordinal code
+```js
+export async function bootstrap(options, data, resources, ooModules) {
+    // Based on the code above ooModules will contain:
+    // {
+    //    ooAPI: {Object}
     // }
 }
 ```
