@@ -16,9 +16,8 @@
             import * as ooBS from './open-ordinal-bootstrap.min.js';
 
             await ooBS.bootstrap({
-                mode: 3, //LoadIndexBySatAndBoot
+                mode: 4, //LoadLatestBySatAndBoot
                 sat: 1234567890,
-                index: -1,
                 data: { "message": "Hello world" },
                 dev: "./index.js"
             });

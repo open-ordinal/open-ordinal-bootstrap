@@ -19,6 +19,7 @@ Head over to [the docs](https://openordinal.dev/docs/open-ordinal-bootstrap/) to
 - `npm install`: Get all the libraries that is needed for development and running this library.
 - `npm run all`: Run the `build`, `schema` and `docs` in sequence.
 - `npm run build`: Builds the `src` to the `lib` folder and then minimize it to the `dist` folder.
+- `npm run test`: The the same as `npm run build` and starts a dev-server hosted on port 9999.
 - `npm run docs`: Builds the `docs`.
 
 ## Inscriptions
