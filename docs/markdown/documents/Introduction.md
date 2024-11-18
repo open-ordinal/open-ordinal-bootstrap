@@ -8,7 +8,7 @@ The Open Ordinal Bootstrap addresses the challenge of immutability in inscriptio
 
 Additionally, the bootstrap code ensures that the inscription size remains small, optimizing the footprint of the ordinal (root inscription). Various modes are available for bootstrapping, such as loading by inscription ID, loading the latest by inscription ID, loading by sat, and more. These modes enable different ways to dynamically load and boot the ordinal with the necessary ES-Modules or JavaScript.
 
-The Open Ordinal Bottstrap is an on-chain resource, inscribed on sat [1690364215876362](https://ordinals.com/sat/1690364215876362).
+The Open Ordinal Bootstrap is an on-chain resource, inscribed on sat [1690364215876362](https://ordinals.com/sat/1690364215876362).
 
 ## Goals
 

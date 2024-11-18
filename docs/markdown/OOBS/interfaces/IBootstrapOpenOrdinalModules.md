@@ -14,4 +14,4 @@ Option to load Open Ordinal API
 
 #### Defined in
 
-[models/Options.ts:60](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/016feec9b8b1e9113d46e85545127ab92a2172b6/src/models/Options.ts#L60)
+[models/Options.ts:60](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/f22244a647657ef6b80a608df99155e3c67ed8fc/src/models/Options.ts#L60)
