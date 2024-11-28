@@ -44,7 +44,8 @@ __webpack_require__.d(__webpack_exports__, {
   BootstrapOpenOrdinalModules: () => (/* reexport */ BootstrapOpenOrdinalModules),
   BootstrapOptions: () => (/* reexport */ BootstrapOptions),
   BootstrapResource: () => (/* reexport */ BootstrapResource),
-  bootstrap: () => (/* reexport */ bootstrap)
+  bootstrap: () => (/* reexport */ bootstrap),
+  setSelf: () => (/* reexport */ setSelf)
 });
 
 // NAMESPACE OBJECT: ./lib/OOBS.Core.js
@@ -55,7 +56,8 @@ __webpack_require__.d(OOBS_Core_namespaceObject, {
   BootstrapOpenOrdinalModules: () => (BootstrapOpenOrdinalModules),
   BootstrapOptions: () => (BootstrapOptions),
   BootstrapResource: () => (BootstrapResource),
-  bootstrap: () => (bootstrap)
+  bootstrap: () => (bootstrap),
+  setSelf: () => (setSelf)
 });
 
 ;// ./lib/models/Options.js
@@ -126,6 +128,7 @@ class BootstrapResource {
  */
 class BootstrapOpenOrdinalModules {
     constructor(options = {}) {
+        this.bs = options.bs = false;
         this.api = options.api = false;
     }
 }
@@ -2776,6 +2779,7 @@ function decodeIter (bufferIterator, options = {}) {
 let _baseUrl = "";
 let _development = false;
 let _recursiveAvailable = true;
+let _self = {};
 //#endregion
 //#region Bootstap Main Functions
 /**
@@ -3152,6 +3156,10 @@ async function loadInscriptionResources(res) {
  */
 async function loadOpenOrdinalModules(options) {
     let ooModules = {};
+    // Check if the Open Ordinal Bootstrap should be included
+    if (options.oo?.bs === true) {
+        ooModules.ooBS = _self;
+    }
     // Check if the Open Ordinal API should be loaded
     if (options.oo?.api === true) {
         let satData = await getSatAt(156280470160431, -1);
@@ -3241,14 +3249,24 @@ function log(message) {
 function err(message) {
     console.error(message);
 }
+function setSelf(selfRef) {
+    _self = selfRef;
+}
 //#endregion
 //#region On Load Triggers
 _baseUrl = getBaseUrl();
 //#endregion
 //# sourceMappingURL=OOBS.Core.js.map
 ;// ./lib/OOBS.js
+/**
+ * Imports
+ */
 
 
+/**
+ * Assign self
+ */
+setSelf(OOBS_Core_namespaceObject);
 /**
  * Assign OOBS to window
  */
@@ -3259,4 +3277,5 @@ var __webpack_exports__BootstrapOpenOrdinalModules = __webpack_exports__.Bootstr
 var __webpack_exports__BootstrapOptions = __webpack_exports__.BootstrapOptions;
 var __webpack_exports__BootstrapResource = __webpack_exports__.BootstrapResource;
 var __webpack_exports__bootstrap = __webpack_exports__.bootstrap;
-export { __webpack_exports__BootstrapMode as BootstrapMode, __webpack_exports__BootstrapOpenOrdinalModules as BootstrapOpenOrdinalModules, __webpack_exports__BootstrapOptions as BootstrapOptions, __webpack_exports__BootstrapResource as BootstrapResource, __webpack_exports__bootstrap as bootstrap };
+var __webpack_exports__setSelf = __webpack_exports__.setSelf;
+export { __webpack_exports__BootstrapMode as BootstrapMode, __webpack_exports__BootstrapOpenOrdinalModules as BootstrapOpenOrdinalModules, __webpack_exports__BootstrapOptions as BootstrapOptions, __webpack_exports__BootstrapResource as BootstrapResource, __webpack_exports__bootstrap as bootstrap, __webpack_exports__setSelf as setSelf };

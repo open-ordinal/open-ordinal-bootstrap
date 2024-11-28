@@ -23,3 +23,4 @@
 ### Functions
 
 - [bootstrap](functions/bootstrap.md)
+- [setSelf](functions/setSelf.md)

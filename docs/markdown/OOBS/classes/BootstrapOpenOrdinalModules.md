@@ -20,9 +20,21 @@ Open Ordinal Modules Options class
 
 #### Defined in
 
-[models/Options.ts:145](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/f22244a647657ef6b80a608df99155e3c67ed8fc/src/models/Options.ts#L145)
+[models/Options.ts:151](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4a183b572bb3a62fef45dc5a91a90ee41306266c/src/models/Options.ts#L151)
 
 ## Properties
+
+### bs?
+
+> `optional` **bs**: `boolean`
+
+Option to forward the Open Ordinal Bootstrap
+
+#### Defined in
+
+[models/Options.ts:145](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4a183b572bb3a62fef45dc5a91a90ee41306266c/src/models/Options.ts#L145)
+
+***
 
 ### api?
 
@@ -32,4 +44,4 @@ Option to load Open Ordinal API
 
 #### Defined in
 
-[models/Options.ts:143](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/f22244a647657ef6b80a608df99155e3c67ed8fc/src/models/Options.ts#L143)
+[models/Options.ts:149](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4a183b572bb3a62fef45dc5a91a90ee41306266c/src/models/Options.ts#L149)

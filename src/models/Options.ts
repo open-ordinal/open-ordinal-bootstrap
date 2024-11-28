@@ -56,6 +56,8 @@ export interface IBootstrapResource {
 
 /** {@inheritDoc BootstrapOpenOrdinalModules} */
 export interface IBootstrapOpenOrdinalModules {
+    /** {@inheritDoc BootstrapOpenOrdinalModules.bs} */
+    bs?: boolean;
     /** {@inheritDoc BootstrapOpenOrdinalModules.api} */
     api?: boolean;
 }
@@ -138,11 +140,16 @@ export class BootstrapResource {
  */
 export class BootstrapOpenOrdinalModules {
     /**
+     * Option to forward the Open Ordinal Bootstrap
+     */
+    bs?: boolean | undefined;
+    /**
      * Option to load Open Ordinal API
      */
     api?: boolean | undefined;
 
     constructor(options: IBootstrapOpenOrdinalModules = {}) {
+        this.bs = options.bs = false;
         this.api = options.api = false;
     }
 }

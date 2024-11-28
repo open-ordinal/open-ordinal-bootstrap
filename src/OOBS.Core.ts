@@ -26,6 +26,7 @@ import { Buffer } from 'buffer';
 let _baseUrl = "";
 let _development = false;
 let _recursiveAvailable = true;
+let _self = {};
 
 //#endregion
 
@@ -417,6 +418,11 @@ async function loadInscriptionResources(res: { [_: string]: IBootstrapResource }
 async function loadOpenOrdinalModules(options: BootstrapOptions): Promise<any> {
     let ooModules: any = {};
 
+    // Check if the Open Ordinal Bootstrap should be included
+    if (options.oo?.bs === true) {
+        ooModules.ooBS = _self;
+    }
+
     // Check if the Open Ordinal API should be loaded
     if (options.oo?.api === true) {
         let satData = await getSatAt(156280470160431, -1);
@@ -513,6 +519,10 @@ function log(message: string) {
 
 function err(message: string) {
     console.error(message);
+}
+
+export function setSelf(selfRef: any) {
+    _self = selfRef;
 }
 
 //#endregion
