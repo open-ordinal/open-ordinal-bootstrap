@@ -1,5 +1,5 @@
 /*! 
-* Open Ordinal Bootstrap 0.9.0
+* Open Ordinal Bootstrap 0.9.1
 */
 /******/ // The require scope
 /******/ var __webpack_require__ = {};
@@ -3169,6 +3169,17 @@ async function loadOpenOrdinalModules(options) {
             let ooAPI = await import(/* webpackIgnore: true */ `${dynamicAPIModuleUrl}`);
             ooModules.ooAPI = ooAPI;
             window.ooAPI = ooAPI;
+        }
+    }
+    // Check if the Open Ordinal Stitch should be loaded
+    if (options.oo?.stitch === true) {
+        let satData = await getSatAt(1690364215914349, -1);
+        if (satData.id) {
+            let dynamicStitchModuleUrl = await getInscriptionContentUrl(satData.id);
+            // Import the dynamic API module
+            let ooST = await import(/* webpackIgnore: true */ `${dynamicStitchModuleUrl}`);
+            ooModules.ooST = ooST;
+            window.ooST = ooST;
         }
     }
     return ooModules;
