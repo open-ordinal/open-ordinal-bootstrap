@@ -4,14 +4,14 @@
 
 > **setSelf**(`selfRef`): `void`
 
+Defined in: [OOBS.Core.ts:537](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/OOBS.Core.ts#L537)
+
 ## Parameters
 
-• **selfRef**: `any`
+### selfRef
+
+`any`
 
 ## Returns
 
 `void`
-
-## Defined in
-
-[OOBS.Core.ts:524](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4a183b572bb3a62fef45dc5a91a90ee41306266c/src/OOBS.Core.ts#L524)

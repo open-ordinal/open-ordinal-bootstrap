@@ -68,6 +68,8 @@ Example of Inscription
         oo: {
             // Load Open Ordinal API module
             api: true
+            // Load Open Ordinal Stitch module
+            stitch: true
         }
         ...
     });
@@ -80,6 +82,7 @@ export async function bootstrap(options, data, resources, ooModules) {
     // Based on the code above ooModules will contain:
     // {
     //    ooAPI: {Object}
+    //    ooST: {Object}
     // }
 }
 ```

@@ -2,6 +2,8 @@
 
 # Enumeration: BootstrapMode
 
+Defined in: [models/Options.ts:4](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L4)
+
 Bootstap Mode
 
 ## Enumeration Members
@@ -10,11 +12,9 @@ Bootstap Mode
 
 > **LoadByMetadataOptionsAndBoot**: `0`
 
+Defined in: [models/Options.ts:8](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L8)
+
 Load Inscription Metadata and Boot using supplied Options (Default)
-
-#### Defined in
-
-[models/Options.ts:8](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4a183b572bb3a62fef45dc5a91a90ee41306266c/src/models/Options.ts#L8)
 
 ***
 
@@ -22,11 +22,9 @@ Load Inscription Metadata and Boot using supplied Options (Default)
 
 > **LoadByInscriptionIdAndBoot**: `1`
 
+Defined in: [models/Options.ts:12](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L12)
+
 Load Inscription Directly by Id and Boot
-
-#### Defined in
-
-[models/Options.ts:12](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4a183b572bb3a62fef45dc5a91a90ee41306266c/src/models/Options.ts#L12)
 
 ***
 
@@ -34,11 +32,9 @@ Load Inscription Directly by Id and Boot
 
 > **LoadLatestByInscriptionIdAndBoot**: `2`
 
+Defined in: [models/Options.ts:16](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L16)
+
 Load Inscription via Id and then via it's SAT and fetch Latest and Boot
-
-#### Defined in
-
-[models/Options.ts:16](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4a183b572bb3a62fef45dc5a91a90ee41306266c/src/models/Options.ts#L16)
 
 ***
 
@@ -46,11 +42,9 @@ Load Inscription via Id and then via it's SAT and fetch Latest and Boot
 
 > **LoadIndexBySatAndBoot**: `3`
 
+Defined in: [models/Options.ts:20](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L20)
+
 Load specified index via SAT and Boot
-
-#### Defined in
-
-[models/Options.ts:20](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4a183b572bb3a62fef45dc5a91a90ee41306266c/src/models/Options.ts#L20)
 
 ***
 
@@ -58,8 +52,6 @@ Load specified index via SAT and Boot
 
 > **LoadLatestBySatAndBoot**: `4`
 
+Defined in: [models/Options.ts:24](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L24)
+
 Load Latest Inscription via SAT and Boot
-
-#### Defined in
-
-[models/Options.ts:24](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/4a183b572bb3a62fef45dc5a91a90ee41306266c/src/models/Options.ts#L24)
