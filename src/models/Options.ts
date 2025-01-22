@@ -60,6 +60,8 @@ export interface IBootstrapOpenOrdinalModules {
     bs?: boolean;
     /** {@inheritDoc BootstrapOpenOrdinalModules.api} */
     api?: boolean;
+    /** {@inheritDoc BootstrapOpenOrdinalModules.stitch} */
+    stitch?: boolean;
 }
 
 /**
@@ -147,6 +149,10 @@ export class BootstrapOpenOrdinalModules {
      * Option to load Open Ordinal API
      */
     api?: boolean | undefined;
+    /**
+     * Option to load Open Ordinal Stitch
+     */
+    stitch?: boolean | undefined;
 
     constructor(options: IBootstrapOpenOrdinalModules = {}) {
         this.bs = options.bs = false;
