@@ -2,7 +2,7 @@
 
 # Class: BootstrapResource
 
-Defined in: [models/Options.ts:119](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L119)
+Defined in: [models/Options.ts:119](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L119)
 
 Resource class
 
@@ -12,7 +12,7 @@ Resource class
 
 > **new BootstrapResource**(`options`): [`BootstrapResource`](BootstrapResource.md)
 
-Defined in: [models/Options.ts:133](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L133)
+Defined in: [models/Options.ts:133](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L133)
 
 #### Parameters
 
@@ -30,7 +30,7 @@ Defined in: [models/Options.ts:133](https://github.com/open-ordinal/open-ordinal
 
 > `optional` **id**: `string`
 
-Defined in: [models/Options.ts:123](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L123)
+Defined in: [models/Options.ts:123](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L123)
 
 Optional: The inscription Id to include
 
@@ -40,7 +40,7 @@ Optional: The inscription Id to include
 
 > `optional` **sat**: `number`
 
-Defined in: [models/Options.ts:127](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L127)
+Defined in: [models/Options.ts:127](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L127)
 
 Optional: The sat Id to include
 
@@ -50,6 +50,6 @@ Optional: The sat Id to include
 
 > `optional` **index**: `number` = `-1`
 
-Defined in: [models/Options.ts:131](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L131)
+Defined in: [models/Options.ts:131](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L131)
 
 Optional: Index on sat to bootstrap

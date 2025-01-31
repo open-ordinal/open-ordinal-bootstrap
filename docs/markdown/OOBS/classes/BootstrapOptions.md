@@ -2,7 +2,7 @@
 
 # Class: BootstrapOptions
 
-Defined in: [models/Options.ts:70](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L70)
+Defined in: [models/Options.ts:70](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L70)
 
 Options class
 
@@ -12,7 +12,7 @@ Options class
 
 > **new BootstrapOptions**(`options`): [`BootstrapOptions`](BootstrapOptions.md)
 
-Defined in: [models/Options.ts:105](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L105)
+Defined in: [models/Options.ts:105](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L105)
 
 #### Parameters
 
@@ -30,7 +30,7 @@ Defined in: [models/Options.ts:105](https://github.com/open-ordinal/open-ordinal
 
 > **mode**: [`BootstrapMode`](../enumerations/BootstrapMode.md) = `BootstrapMode.LoadByMetadataOptionsAndBoot`
 
-Defined in: [models/Options.ts:74](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L74)
+Defined in: [models/Options.ts:74](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L74)
 
 The mode for bootstrapping
 
@@ -40,7 +40,7 @@ The mode for bootstrapping
 
 > `optional` **id**: `number`
 
-Defined in: [models/Options.ts:78](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L78)
+Defined in: [models/Options.ts:78](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L78)
 
 Optional: The inscription Id to bootstrap
 
@@ -50,7 +50,7 @@ Optional: The inscription Id to bootstrap
 
 > `optional` **sat**: `number`
 
-Defined in: [models/Options.ts:82](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L82)
+Defined in: [models/Options.ts:82](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L82)
 
 Optional: The sat Id to bootstrap
 
@@ -60,7 +60,7 @@ Optional: The sat Id to bootstrap
 
 > `optional` **index**: `number` = `-1`
 
-Defined in: [models/Options.ts:86](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L86)
+Defined in: [models/Options.ts:86](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L86)
 
 Optional: Index on sat to bootstrap
 
@@ -70,7 +70,7 @@ Optional: Index on sat to bootstrap
 
 > `optional` **data**: `any`
 
-Defined in: [models/Options.ts:90](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L90)
+Defined in: [models/Options.ts:90](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L90)
 
 Optional: Data to pass into the bootstrap
 
@@ -80,7 +80,7 @@ Optional: Data to pass into the bootstrap
 
 > `optional` **res**: `object`
 
-Defined in: [models/Options.ts:94](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L94)
+Defined in: [models/Options.ts:94](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L94)
 
 Optional: Additional inscriptions to load and pass into `bootstrap()`
 
@@ -94,7 +94,7 @@ Optional: Additional inscriptions to load and pass into `bootstrap()`
 
 > `optional` **oo**: [`BootstrapOpenOrdinalModules`](BootstrapOpenOrdinalModules.md)
 
-Defined in: [models/Options.ts:98](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L98)
+Defined in: [models/Options.ts:98](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L98)
 
 Optional: Additional Open Ordinal modules to load
 
@@ -104,7 +104,7 @@ Optional: Additional Open Ordinal modules to load
 
 > `optional` **dev**: `string`
 
-Defined in: [models/Options.ts:103](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L103)
+Defined in: [models/Options.ts:103](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L103)
 
 Optional: Relative path to module to boot. This is used during development
 and should never be present in actual inscribed ordinal.

@@ -2,7 +2,7 @@
 
 # Class: BootstrapOpenOrdinalModules
 
-Defined in: [models/Options.ts:143](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L143)
+Defined in: [models/Options.ts:143](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L143)
 
 Open Ordinal Modules Options class
 
@@ -12,7 +12,7 @@ Open Ordinal Modules Options class
 
 > **new BootstrapOpenOrdinalModules**(`options`): [`BootstrapOpenOrdinalModules`](BootstrapOpenOrdinalModules.md)
 
-Defined in: [models/Options.ts:157](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L157)
+Defined in: [models/Options.ts:157](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L157)
 
 #### Parameters
 
@@ -30,7 +30,7 @@ Defined in: [models/Options.ts:157](https://github.com/open-ordinal/open-ordinal
 
 > `optional` **bs**: `boolean`
 
-Defined in: [models/Options.ts:147](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L147)
+Defined in: [models/Options.ts:147](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L147)
 
 Option to forward the Open Ordinal Bootstrap
 
@@ -40,7 +40,7 @@ Option to forward the Open Ordinal Bootstrap
 
 > `optional` **api**: `boolean`
 
-Defined in: [models/Options.ts:151](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L151)
+Defined in: [models/Options.ts:151](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L151)
 
 Option to load Open Ordinal API
 
@@ -50,6 +50,6 @@ Option to load Open Ordinal API
 
 > `optional` **stitch**: `boolean`
 
-Defined in: [models/Options.ts:155](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/12e120e69223fce73e36f2e93bd5388505f495e2/src/models/Options.ts#L155)
+Defined in: [models/Options.ts:155](https://github.com/open-ordinal/open-ordinal-bootstrap/blob/53ec9850e3d068ec01c256bc830a523a38d8cf6f/src/models/Options.ts#L155)
 
 Option to load Open Ordinal Stitch
